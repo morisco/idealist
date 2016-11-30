@@ -295,7 +295,7 @@ header .header-actions{
 
 #action-panel a.slide-nav{
     position:absolute;
-    top:30vh;
+    top:47.5%;
     transform:translateY(-50%);
     color:white;
     z-index:-1;
@@ -452,11 +452,21 @@ header .header-actions{
     transform:translate(-50%, -50%);
 }
 
+form{
+    width:30rem;
+    max-width:95%;
+    margin:0 auto;
+}
+
 input{
-    height:35px;
+    display:block;
+    height:40px;
     width:100%;
     border-radius:3px;
     background:white;
+    border:0px;
+    padding:.5rem 1rem;
+    margin-bottom:.5rem;
 }
 
 button[type="submit"]{
