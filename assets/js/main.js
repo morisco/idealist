@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
-    $('#action-panel').on('click', '#learn-more', loadSlideshow)
+
+    $('#header-join').on('click', function(){
+        $('.image-fixed').removeClass('fade visible');
+        $('#action-panel .slides').slick('slickGoTo', 20);
+    });
     
     var shareOffset = $('#page-shares').offset(),
         shareFixed = false,
