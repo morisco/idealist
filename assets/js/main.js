@@ -81,7 +81,7 @@ $(document).ready(function(){
             height: height + 'px',
             top: top + 'px',
             left: left + 'px'
-        }).empty().append('<img src="' + $('#slide-gif-' + (index+1)).attr('src') + '?x' + date.getTime() +'" />');
+        }).empty().append('<img src="' + $('#' + image).attr('src') + '?x' + date.getTime() +'" />');
 
         $('.image-fixed').addClass('visible');
     });
