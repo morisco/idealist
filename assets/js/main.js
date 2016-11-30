@@ -1,11 +1,5 @@
 $(document).ready(function(){
 
-
-    $('#header-join').on('click', function(){
-        $('.image-fixed').removeClass('fade visible');
-        $('#action-panel .slides').slick('slickGoTo', 20);
-    });
-    
     var shareOffset = $('#page-shares').offset(),
         shareFixed = false,
         scrollPos = $(window).scrollTop(),
@@ -42,7 +36,9 @@ $(document).ready(function(){
         $('.image-fixed').addClass('visible');
     });
 
-    var slick = $('#action-panel .slides').slick({
+    var $slick = $('#action-panel .slides');
+
+    var slick = $slick.slick({
         nextArrow: '.slide-next',
         prevArrow: '.slide-prev',
         dots: true,
@@ -52,19 +48,32 @@ $(document).ready(function(){
         arrows: true
     });
 
+    $(document).on('keydown', function(e) {
+         if(e.keyCode == 37) {
+             $slick.slick('slickPrev');
+         }
+         if(e.keyCode == 39) {
+             $slick.slick('slickNext');
+         }
+     });
 
-    $('#action-panel .slides').on('beforeChange', function(e, slick, current, next){
+    $('#header-join').on('click', function(){
+        $('.image-fixed').removeClass('fade visible');
+        $slick.slick('slickGoTo', 20);
+    });
+
+    $slick.on('beforeChange', function(e, slick, current, next){
         $('#progress-bar-status').css('max-width', ((next + 1) * progressWidth) + '%');
         var date = new Date();
         var gifSrc = $('#slide-gif-' + (next+1)).attr('src') + '?x' + date.getTime();
         // $('#slide-gif-' + (next+1)).css('opacity', '0');
         // $('#slide-gif-' + (next+1)).attr('src', gifSrc).css('opacity', 1);
-        if(next === 9){
+        if(next === 9 || next === 11 || next === 21){
             $('.image-fixed').removeClass('fade visible');
         }
     });
 
-    $('#action-panel .slides').on('afterChange', function(e, slick, index){
+    $slick.on('afterChange', function(e, slick, index){
         var date = new Date();
         var image   = $('#action-panel .slide.slick-active').data('image');
 
@@ -124,7 +133,8 @@ $(document).ready(function(){
     }
 
     function initSlick(){
-        var slick = $('#action-panel .slides').slick({
+        var $slick = $('#action-panel .slides');
+        var slick = $slick.slick({
             nextArrow: '.slide-next',
             prevArrow: '.slide-prev',
             dots: true,
