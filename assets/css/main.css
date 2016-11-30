@@ -295,7 +295,7 @@ header .header-actions{
 
 #action-panel a.slide-nav{
     position:absolute;
-    top:30vh;
+    top:47.5%;
     transform:translateY(-50%);
     color:white;
     z-index:-1;
@@ -459,18 +459,65 @@ header .header-actions{
     transform:translate(-50%, -50%);
 }
 
+.form{
+    position:relative;
+    height:100%;
+}
+
+form{
+    position:absolute;
+    top:50%;
+    width:30rem;
+    max-width:95%;
+    left:50%;
+    transform:translate(-50%, -50%);
+
+}
+
 input{
-    height:35px;
+    display:block;
+    height:50px;
     width:100%;
     border-radius:3px;
     background:white;
+    border:0px;
+    padding:.75rem 1rem;
+    margin-bottom:.75rem;
 }
 
 button[type="submit"]{
+    display:block;
     border:yellow;
     border-radius:3px;
     background:transparent;
     outline:0;
+    background-image:url(../images/btn1.jpg);
+    background-size:100%;
+    height:190px;
+    width:300px;
+    text-indent:-5555px;
+    cursor:pointer;
+    margin:0 auto;
+}
+button[type="submit"]:hover{
+    background-image:url(../images/btn2.jpg);
+}
+
+button[type="submit"]:active{
+    background-image:url(../images/btn4.jpg);
+}
+
+::-webkit-input-placeholder { /* Chrome/Opera/Safari */
+  line-height:200%;
+}
+::-moz-placeholder { /* Firefox 19+ */
+  line-height:200%;
+}
+:-ms-input-placeholder { /* IE 10+ */
+  line-height:200%;
+}
+:-moz-placeholder { /* Firefox 18- */
+  line-height:200%;
 }
 
 @media(max-width:640px){
