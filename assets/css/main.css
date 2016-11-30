@@ -116,7 +116,13 @@ header h1{
 }
 
 header #header-join{
-    display:none;
+    display:inline-block;
+    letter-spacing:.125rem;
+    color:#ffe000;
+    font-size:1rem;
+    text-align:right;
+    font-weight:bold;
+    margin-top:.375rem;
 }
 
 .intro-color-block{
@@ -181,12 +187,36 @@ header #header-join{
     transform:translate(-50%, -50%);
 }
 
-#page-shares{
+header .header-actions{
     position:absolute;
     width:auto;
     top:.5rem;
     right:0;
     text-align:center;
+}
+
+#page-shares{
+    position:relative;
+    display:inline-block;
+    margin-left:.75em;
+    margin-right:0;
+}
+
+#page-shares .share-links{
+    position:absolute;
+    visibility:hidden;
+    top:1rem;
+    padding-top:.5rem;
+    left:50%;
+    opacity:0;
+    margin-left:-.625rem;
+    transition:opacity 0.25s linear 0s, visibility 0s linear 0.25s;
+}
+
+#page-shares:hover .share-links{
+    visibility:visible;
+    opacity:1;
+    transition:opacity 0.25s linear 0.05s, visibility 0s linear 0s;
 }
 
 #page-shares.fixed{
@@ -195,7 +225,7 @@ header #header-join{
 }
 
 #page-shares div{
-    display:inline-block;
+    display:block;
     font-size:1rem;
     color:#fff;
     letter-spacing:.025rem;
@@ -207,8 +237,9 @@ header #header-join{
 }
 
 #page-shares a{
-    display:inline-block;
+    display:block;
     vertical-align:middle;
+    margin-bottom:.5rem;
 }
 
 #page-shares img{
@@ -378,7 +409,6 @@ header #header-join{
 #action-panel .image-fixed img{
     height:100%;
     opacity:0;
-    transition:opacity 0.25s linear;
 }
 
 #action-panel .image-fixed.visible img{
@@ -434,16 +464,6 @@ header #header-join{
         height:1.825rem;
         float:left;
         margin-right:.5rem;
-    }
-
-    header #header-join{
-        display:block;
-        letter-spacing:.125rem;
-        color:#ffe000;
-        font-size:1rem;
-        text-align:right;
-        font-weight:bold;
-        margin-top:.375rem;
     }
 
     #progress-bar{
