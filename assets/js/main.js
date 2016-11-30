@@ -59,7 +59,7 @@ $(document).ready(function(){
 
     $('#header-join').on('click', function(){
         $('.image-fixed').removeClass('fade visible');
-        $slick.slick('slickGoTo', 20);
+        $slick.slick('slickGoTo', 21);
     });
 
     $slick.on('beforeChange', function(e, slick, current, next){
