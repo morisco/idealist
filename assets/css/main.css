@@ -284,10 +284,8 @@ header .header-actions{
 }
 
 #action-panel .slides .slide .slide-content{
-    position:absolute;
+    position:relative;
     width:100%;
-    top:50%;
-    transform:translateY(-50%);
 }
 
 #action-panel .slides .slide:focus{
@@ -438,6 +436,20 @@ header .header-actions{
     font-size:1.2rem;
     letter-spacing:0.1rem;
     text-align:center;
+}
+
+input{
+    height:35px;
+    width:100%;
+    border-radius:3px;
+    background:white;
+}
+
+button[type="submit"]{
+    border:yellow;
+    border-radius:3px;
+    background:transparent;
+    outline:0;
 }
 
 @media(max-width:640px){
