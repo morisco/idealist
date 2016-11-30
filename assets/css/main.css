@@ -441,6 +441,13 @@ header .header-actions{
     text-align:center;
 }
 
+#action-panel .slide-text strong {
+    font-family: "gilroy";
+    font-weight: bold;
+    letter-spacing: 0.05em;
+    font-size: .9em;
+}
+
 #action-panel .text-only{
     height:100%;
 }
